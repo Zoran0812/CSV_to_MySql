@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  div.container.card-0.justify-content-center
+    div.card-body.px-sm-4.px-0
+      div.row.justify-content-center
+        div.col-md-10.col
+          h3.font-weight-bold.ml-md-0.mx-auto.text-center.text-sm-left Convert CSV to MySQL
+            p.mt-md-4.ml-md-0.ml-2.text-center.text-sm-left You can get info you need very easily, quickly and perfectly!
+      div.row.justify-content-center.round
+        div.col-lg-10.col-md-12
+          div.card.shadow-lg.card-1
+            div.card-body.inner-card
+              form(action="/api/upload" method="POST" enctype="multipart/form-data" target='_NEW')
+                div.row.justify-content-center
+                  div.col-md-12.col-lg-10.col-12
+                    div.form-group.files
+                      label.my-auto Upload Your File
+                      input.form-control(id="file" type="file" name="upload_file" accept=".csv") 
+                div.row.justify-content-center
+                  div.col-md-12.col-lg-10.col-12
+                    div.row.justify-content-end.mb-5
+                      div.col-lg-4.col-auto 
+                        button.btn.btn-primary.btn-block.btn-submit(onClick="submit()")
+                          small.font-weight-bold Convert
+              form(action="/api/report" method="GET" target='_NEW')
+                div.row.justify-content-center
+                  div.col-lg-4.col-md-4.col-sm-12
+                    div.form-group
+                      label(for="select-date") Select Date
+                      input.form-control(type="date" name="select_date" class="form-control" id="select_date")
+                  div.col-lg-4.col-md-4.col-sm-12
+                    div.form-group
+                      label(for="select-date") Month
+                      input.form-control(type="number" min="1" max="12" value="12" name="select_month" class="form-control" id="select_month")
+                  div.col-lg-4.col-md-4.col-sm-12
+                    div.form-group
+                      label(for="select-date") Select Param
+                      select.form-control(name="select_param" class="form-control" id="select_param")
+                        option(value="all") All
+                        option(value="horse") Horse
+                        option(value="jockey") Jockey
+                        option(value="trainer") Trainer
+                        option(value="sire") Sire
+                        option(value="dam") Dam
+                        option(value="damsire") DamSire
+                div.row.justify-content-center
+                  div.col-md-12.col-lg-10.col-12
+                    div.row.justify-content-end.mb-5
+                      div.col-lg-4.col-auto 
+                        button.btn.btn-primary.btn-block.btn-submit(onClick="submit()")
+                          small.font-weight-bold Report

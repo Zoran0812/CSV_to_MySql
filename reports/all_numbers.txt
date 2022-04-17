@@ -1,0 +1,6 @@
+jockey  : 1554
+trainer : 1845
+horse   : 25488
+dam     : 18272
+damsire : 2422
+sire    : 1709
